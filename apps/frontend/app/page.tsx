@@ -10,13 +10,13 @@ export default function Home() {
     useEffect(() => {
         const fetchData = async () => {
             const response = await axios.get(BACKEND_URL);
-            setData(response.data);
+            setData(response.data.data);
         }
         fetchData();
     }, []);
     return (
         <div className="text-center">
-            {JSON.stringify(data)}
+            {data}
         </div>
     )
 }
